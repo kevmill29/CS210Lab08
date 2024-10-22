@@ -18,6 +18,14 @@ public class LabEight {
         int n = input.nextInt();
         int sum = calcSum(n);
         System.out.print("The number you entered is: "+n+" and the sum of the first numbers is "+ sum);
+
+        System.out.print("\n5.---------------------------\n Enter your weight in pounds: ");
+        int bmi = 0;
+        double weight= input.nextDouble();
+        System.out.print("\n Enter your height in inches: ");
+        double height=input.nextDouble();
+        bmi = bmiCalc(weight, height);
+        System.out.print("Your BMI is: "+ bmi);
         input.close();
     }
 
@@ -43,5 +51,10 @@ public class LabEight {
                 sum+=j;
             }
             return sum;
+        }
+
+        public static int bmiCalc(double weight, double height ){
+         int bmi = (int)((weight/(height*height))*703.0);
+        return bmi;
         }
 }
